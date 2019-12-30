@@ -74,5 +74,6 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homeLink)
 	router.HandleFunc("/istwosidedprime/{num}", isTwoSidedPrimeHandler).Methods("GET")
+	log.Printf("Starting api server")
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
